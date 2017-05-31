@@ -78,7 +78,8 @@ function printResult (errs,amount) {
   } else {
       mark = 1;
   }
-  alert("Оценка: " + mark + "\n" + "(неправильно: " + errs + " из " + amount + ")");
+  var markString = document.getElementById("mark");
+  markString.innerHTML = "<span class='score'>" + mark + "</span>" + "<br>" + "(" + (amount - errs) + " из " + amount + ")";
   
   wgongs = wgongs.join("<br>")
   var text = document.getElementById("text");
@@ -86,7 +87,6 @@ function printResult (errs,amount) {
 }
 
 function checkAnswer (operator,rightAnswer,yourAnswer,number1,number2) {
-  yourAnswer = parseInt(yourAnswer);
   var feedback = "";
   var plusOrMinus = "";
   
@@ -116,6 +116,10 @@ function processPlus (amount, operator, numbers) {
     
     var rightAnswer = number1 + number2;
     var yourAnswer = prompt((counter + 1) + ") " + number1 + " + " + number2 + " =");
+    yourAnswer = parseInt(yourAnswer);
+    if (yourAnswer === '' || isNaN(yourAnswer)) {
+        yourAnswer = 0;
+    }
 
     alert(checkAnswer (operator,rightAnswer,yourAnswer,number1,number2));
   }
@@ -130,6 +134,10 @@ function processMinus (amount, operator, numbers) {
     
     var rightAnswer = number1 - number2;
     var yourAnswer = prompt((counter + 1) + ") " + number1 + " - " + number2 + " =");
+    yourAnswer = parseInt(yourAnswer);
+    if (yourAnswer === '' || isNaN(yourAnswer)) {
+        yourAnswer = 0;
+    }
 
     alert(checkAnswer (operator,rightAnswer,yourAnswer,number1,number2));
   }

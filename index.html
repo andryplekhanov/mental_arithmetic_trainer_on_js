@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Тренажер устного счёта</title>
-  <link href="styles/clearfix.css" rel="stylesheet" type="text/css">
   <link href="styles/main.css" rel="stylesheet" type="text/css">
   <link href="styles/reset.css" rel="stylesheet" type="text/css">
   <link href="styles/buttons.css" rel="stylesheet" type="text/css">
+  <link href="styles/footer.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
   <script async src="js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
+  <h1 class="head">Тренажер устного счета</h1>
+  <h2 class="head">Прокачай свой мозг!</h2>
   <main class="settings-wrapper">
-    <h2 class="head-2">Прокачай свой мозг!</h2>
-    <label class="question">Сколько примеров будем фигачить?</label>
-    <input type="number" id="amount" value="10" min="10" max="50"/><br>
+    <label class="question">Сколько примеров заряжать?</label>
+    <input class="input" type="number" id="amount" value="10" min="10" max="100"/><br>
 
-    <p class="question">Какое действие будем производить?</p>
-    <label>(+)</label><input id="plus" type="radio" name="answer" checked="true">
-    <label>(-)</label><input id="minus" type="radio" name="answer"><br>
+    <p class="question">Какое арифметическое действие будем производить?</p>
+    <label class="operator">+</label><input id="plus" type="radio" name="answer" checked="true">
+    <label class="operator">&minus;</label><input id="minus" type="radio" name="answer"><br>
 
     <p class="question">С числами какого разряда будем работать?</p>
-    <select>
+    <select  class="input">
       <option id="numbers1" selected>X + X</option>
       <option id="numbers2">XX + X</option>
       <option id="numbers3">XX + XX</option>
@@ -35,8 +36,9 @@
   </main>
   
   <section class="result-wrapper">
-    <h2 class="head-2">Результат тренинга</h2>
+    <h2 class="head">Результат тренинга</h2>
     <p class="result" id="text">здесь появится результат</p>
+    <p class="mark" id="mark">здесь будет оценка</p>
   </section>
 </body>
 </html>
