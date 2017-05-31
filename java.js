@@ -2,6 +2,7 @@ var errs = 0;
 var number1 = 0;
 var number2 = 0;
 var amount = 0;
+var wgongs = [];
 
 function getData() {
   amount = document.getElementById("amount").value;
@@ -45,6 +46,7 @@ function getData() {
 
 function setProcess(amount, operator, numbers) {
   errs = 0;
+  wgongs = [];
   
   if (operator === "plus") {
     processPlus(amount, operator, numbers);
@@ -52,7 +54,7 @@ function setProcess(amount, operator, numbers) {
     processMinus(amount, operator, numbers);
   }
 }
-    
+
 document.getElementById("btn").onclick = getData;
 
 function randomNumber(m,n) {
@@ -68,29 +70,42 @@ function printResult (errs,amount) {
   if (correct >= 95) {
   	mark = 5;
   } else if (correct >= 80 && correct <= 94) {
-  	mark = 4;
+      mark = 4;
   } else if (correct >= 50 && correct <= 79) {
-  	mark = 3;
+      mark = 3;
   } else if (correct >= 15 && correct <= 49) {
-  	mark = 2;
+      mark = 2;
   } else {
-  	mark = 1;
+      mark = 1;
   }
+  alert("Оценка: " + mark + "\n" + "(неправильно: " + errs + " из " + amount + ")");
   
-  alert("Оценка: " + mark + " (неправильно: " + errs + " из " + amount + ")");
+  wgongs = wgongs.join("<br>")
+  var text = document.getElementById("text");
+  text.innerHTML = wgongs;
 }
 
-function checkAnswer (rightAnswer,yourAnswer) {
+function checkAnswer (operator,rightAnswer,yourAnswer,number1,number2) {
   yourAnswer = parseInt(yourAnswer);
   var feedback = "";
+  var plusOrMinus = "";
+  
+  if (operator === "plus") {
+    plusOrMinus = " + ";
+  } else {
+      plusOrMinus = " - ";
+  }
+  
+  var correct = number1 + plusOrMinus + number2 + " = " + rightAnswer;
   
   if (rightAnswer === yourAnswer) {
-  	feedback = "Верно! ";
+  	feedback = "Верно! " + correct;
   }
   else {
-  	feedback = yourAnswer + " - неверно! Правильный ответ: " + rightAnswer + " ";
-    errs++
+  	feedback = yourAnswer + " - неверно! " + correct;
+    errs++;
   }
+  wgongs.push(feedback);
   return feedback;
 }
 
@@ -102,7 +117,7 @@ function processPlus (amount, operator, numbers) {
     var rightAnswer = number1 + number2;
     var yourAnswer = prompt((counter + 1) + ") " + number1 + " + " + number2 + " =");
 
-    alert(checkAnswer (rightAnswer,yourAnswer));
+    alert(checkAnswer (operator,rightAnswer,yourAnswer,number1,number2));
   }
 
   printResult (errs,amount);
@@ -116,7 +131,7 @@ function processMinus (amount, operator, numbers) {
     var rightAnswer = number1 - number2;
     var yourAnswer = prompt((counter + 1) + ") " + number1 + " - " + number2 + " =");
 
-    alert(checkAnswer (rightAnswer,yourAnswer));
+    alert(checkAnswer (operator,rightAnswer,yourAnswer,number1,number2));
   }
 
   printResult (errs,amount);
