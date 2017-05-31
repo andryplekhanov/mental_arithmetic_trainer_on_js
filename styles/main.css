@@ -1,0 +1,39 @@
+* {
+  font-family: 'Comfortaa', cursive;
+}
+
+html,
+body {
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.settings-wrapper {
+  
+}
+
+.head-2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.result-wrapper {
+  margin-top: 30px;
+}
+
+.result {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  font-family: 'Bad Script', cursive;
+  font-size: 18px;
+}
+
+.question {
+  display: block;
+  margin: 15px auto 5px auto;
+  text-align: center;
+}

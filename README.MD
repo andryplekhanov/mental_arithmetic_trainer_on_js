@@ -10,4 +10,4 @@
 #### Запуск  
 
 Для запуска приложения перейдите по поссылке:
-[ЗАПУСК](https://andryplekhanov.github.io/mental_arithmetic_trainer_on_js/)
+[ЗАПУСК](https://andryplekhanov.github.io/mental_arithmetic_trainer_on_js/index.html)

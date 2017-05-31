@@ -1,0 +1,28 @@
+.button {
+  display: block;
+  margin: 15px auto;
+  width: 150px;
+  height: 50px;
+  background-color: #3096a4;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: cornsilk;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0 0 5px black;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  font-size: 20px;
+  width: 200px;
+  transition-duration: .5s;
+  color: white;
+}
+
+.button:not(:hover) {
+  width: 150px;
+  transition-duration: .5s;
+  color: cornsilk;
+}
