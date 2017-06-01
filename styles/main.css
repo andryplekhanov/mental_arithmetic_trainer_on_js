@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  background-image:url(../images/background1.jpg);
+  background-image: url(../images/background1.jpg);
 }
 
 .settings-wrapper {
@@ -92,14 +92,14 @@ body {
   border-top: 2px solid red;
   color: red;
   text-align: center;
-  padding-top: 5px;
   min-width: 90px;
 }
 
 .score {
   color: red;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
+  font-family: 'Bad Script', cursive;
 }
 
 .correct_answer {
@@ -127,5 +127,7 @@ body {
 
 .corrected_answer {
   color: red;
+  font-family: 'Bad Script', cursive;
   font-weight: bold;
+  font-size: 20px;
 }
