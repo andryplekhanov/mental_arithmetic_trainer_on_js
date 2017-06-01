@@ -1,9 +1,9 @@
 .footer {
-  height: 70px;
+  height: 80px;
   width: 100%;
   margin: 20px auto 5px auto;
 /*  margin: 0 auto;*/
-  padding-top: 15px;
+  padding-top: 10px;
   text-align: center;
   background-image: url(../images/dark_wood.jpg);
   color: white;
@@ -28,4 +28,8 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
+}
+
+.copyright-text a:hover {
+  text-decoration: underline;
 }

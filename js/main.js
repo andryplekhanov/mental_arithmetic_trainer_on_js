@@ -102,12 +102,17 @@ function checkAnswer (operator,rightAnswer,yourAnswer,number1,number2) {
   	feedback = "<span class='correct_answer'>&#10004; </span>" + correct;
   }
   else {
-  	feedback = number1 + plusOrMinus + number2 + " = " + "<span class='line_through'>" + yourAnswer + "</span>" + " = " + rightAnswer;
+  	feedback = number1 + plusOrMinus + number2 + " = " + "<span class='uncorrect_answer'>" + yourAnswer + "</span>" + "<span class='corrected_answer'> = " + rightAnswer + "</span>";
     errs++;
   }
   wgongs.push(feedback);
   return feedback;
 }
+
+//function giveInstantFeedback(feedback) {
+//  var instantFeedback = document.getElementById('text');
+//    instantFeedback.innerHTML = feedback;
+//}
 
 function processPlus (amount, operator, numbers) {
   for (var counter = 0; counter < amount; counter++) {
@@ -115,13 +120,14 @@ function processPlus (amount, operator, numbers) {
     setNumbers (operator, numbers);
     
     var rightAnswer = number1 + number2;
-    var yourAnswer = prompt((counter + 1) + ") " + number1 + " + " + number2 + " =");
+    var task = (counter + 1) + ") " + number1 + " + " + number2 + " =";
+    var yourAnswer = prompt(task);
     yourAnswer = parseInt(yourAnswer);
     if (yourAnswer === '' || isNaN(yourAnswer)) {
         yourAnswer = 0;
     }
-
-    alert(checkAnswer (operator,rightAnswer,yourAnswer,number1,number2));
+    
+    checkAnswer (operator,rightAnswer,yourAnswer,number1,number2);
   }
 
   printResult (errs,amount);
@@ -133,13 +139,14 @@ function processMinus (amount, operator, numbers) {
     setNumbers (operator, numbers);
     
     var rightAnswer = number1 - number2;
-    var yourAnswer = prompt((counter + 1) + ") " + number1 + " - " + number2 + " =");
+    var task = (counter + 1) + ") " + number1 + " - " + number2 + " =";
+    var yourAnswer = prompt(task);
     yourAnswer = parseInt(yourAnswer);
     if (yourAnswer === '' || isNaN(yourAnswer)) {
         yourAnswer = 0;
     }
     
-    alert(checkAnswer (operator,rightAnswer,yourAnswer,number1,number2));
+    checkAnswer (operator,rightAnswer,yourAnswer,number1,number2);
   }
 
   printResult (errs,amount);

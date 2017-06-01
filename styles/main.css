@@ -4,7 +4,6 @@
 
 html,
 body {
-/*  max-width: 600px;*/
   height: 100%;
   margin: 0 auto;
 }
@@ -108,22 +107,25 @@ body {
   font-weight: bold;
 }
 
-.line_through {
-/*  text-decoration: line-through;*/
+.uncorrect_answer {
   position: relative;
 }
 
-.line_through:before {
+.uncorrect_answer:before {
   display: block;
   position: absolute;
   border-top: 2px solid red;
-  left: 1%;
+  left: -10%;
   top: 50%;
   content: "";
   color: red;
   font-weight: bold;
   width: 1px;
   height: 100%;
-  width: 100%;
+  width: 120%;
 }
 
+.corrected_answer {
+  color: red;
+  font-weight: bold;
+}
