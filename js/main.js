@@ -99,10 +99,10 @@ function checkAnswer (operator,rightAnswer,yourAnswer,number1,number2) {
   var correct = number1 + plusOrMinus + number2 + " = " + rightAnswer;
   
   if (rightAnswer === yourAnswer) {
-  	feedback = "Верно! " + correct;
+  	feedback = "<span class='correct_answer'>&#10004; </span>" + correct;
   }
   else {
-  	feedback = yourAnswer + " - неверно! " + correct;
+  	feedback = number1 + plusOrMinus + number2 + " = " + "<span class='line_through'>" + yourAnswer + "</span>" + " = " + rightAnswer;
     errs++;
   }
   wgongs.push(feedback);
@@ -138,7 +138,7 @@ function processMinus (amount, operator, numbers) {
     if (yourAnswer === '' || isNaN(yourAnswer)) {
         yourAnswer = 0;
     }
-
+    
     alert(checkAnswer (operator,rightAnswer,yourAnswer,number1,number2));
   }
 

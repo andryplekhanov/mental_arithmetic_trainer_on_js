@@ -1,0 +1,31 @@
+.footer {
+  height: 70px;
+  width: 100%;
+  margin: 20px auto 5px auto;
+/*  margin: 0 auto;*/
+  padding-top: 15px;
+  text-align: center;
+  background-image: url(../images/dark_wood.jpg);
+  color: white;
+  box-shadow: 3px 3px 10px 0 black;
+  position: absolute;
+/*  position: fixed;*/
+  
+}
+
+.sign {
+  color: greenyellow;
+  text-shadow: 0 0 10px black;
+  font-size: 25px;
+}
+
+.copyright-text {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.copyright-text a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
