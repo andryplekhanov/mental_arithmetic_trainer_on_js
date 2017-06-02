@@ -27,9 +27,18 @@ body {
   box-shadow: 3px 3px 20px 0 black;
 }
 
-.operator {
+.operator,
+.time-restriction {
   padding: 5px;
   font-weight: bold;
+}
+
+#restriction {
+  width: 45px;
+}
+
+.seconds_for_task {
+  font-size: 14px;
 }
 
 .head {
@@ -79,6 +88,7 @@ body {
   font-weight: bold;
   padding: 5px;
   margin-top: 5px;
+  outline: none;
 }
 
 .mark {
@@ -87,12 +97,14 @@ body {
   display: block;
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 0px;
   transform: rotate(-10deg);
   border-top: 2px solid red;
   color: red;
   text-align: center;
   min-width: 90px;
+  height: 80px;
+  line-height: 30px;
 }
 
 .score {
@@ -109,6 +121,7 @@ body {
 
 .uncorrect_answer {
   position: relative;
+  font-family: 'Bad Script', cursive;
 }
 
 .uncorrect_answer:before {

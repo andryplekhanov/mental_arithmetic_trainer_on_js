@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Тренажер устного счёта</title>
-  <link href="/styles/main.css" rel="stylesheet" type="text/css">
-  <link href="/styles/reset.css" rel="stylesheet" type="text/css">
-  <link href="/styles/buttons.css" rel="stylesheet" type="text/css">
-  <link href="/styles/footer.css" rel="stylesheet" type="text/css">
+  <link href="styles/main.css" rel="stylesheet" type="text/css">
+  <link href="styles/reset.css" rel="stylesheet" type="text/css">
+  <link href="styles/buttons.css" rel="stylesheet" type="text/css">
+  <link href="styles/footer.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
-  <script async src="/js/main.js" type="text/javascript"></script>
+  <script async src="js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -31,7 +31,12 @@
       <option id="numbers4">XXX + XX</option>
       <option id="numbers5">XXX + XXX</option>
     </select>
-    <br>
+    
+<!--
+    <label class="question">[не реализовано] Ограничение по времени:</label>
+    <p class="question"><input class="input" type="number" id="restriction" value="10" min="2" max="30"/><span class="seconds_for_task">   сек. на пример</span></p>
+-->
+    
     <input class="button" type="button" id="btn" value="ПОЕХАЛИ!">
   </main>
   
@@ -43,7 +48,6 @@
   
   <footer class="footer">
     <div class="copyright">
-      <p class="copyright-text">Don't steal my code, and I won't curse you!</p>
       <p class="copyright-text">andryplekhanov &copy; 2017 All rights reserved</p>
       <p class="copyright-text">Made with 
         <span class="sign"> &hearts;  </span>

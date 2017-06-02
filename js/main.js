@@ -79,7 +79,7 @@ function printResult (errs,amount) {
       mark = 1;
   }
   var markString = document.getElementById("mark");
-  markString.innerHTML = "<span class='score'>" + mark + "</span>" + "<br>" + "(" + (amount - errs) + " из " + amount + ")";
+  markString.innerHTML = "<span class='score'>" + mark + "</span>" + "<br>" + "( " + (amount - errs) + " из " + amount + " )";
   
   wgongs = wgongs.join("<br>")
   var text = document.getElementById("text");
@@ -111,7 +111,7 @@ function checkAnswer (operator,rightAnswer,yourAnswer,number1,number2) {
 
 //function giveInstantFeedback(feedback) {
 //  var instantFeedback = document.getElementById('text');
-//    instantFeedback.innerHTML = feedback;
+//    document.write('feedback');
 //}
 
 function processPlus (amount, operator, numbers) {
