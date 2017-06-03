@@ -99,7 +99,7 @@ function checkAnswer (operator,rightAnswer,yourAnswer,number1,number2) {
   var correct = number1 + plusOrMinus + number2 + " = " + rightAnswer;
   
   if (rightAnswer === yourAnswer) {
-  	feedback = "<span class='correct_answer'>&#10004; </span>" + correct;
+  	feedback = correct + "<span class='correct_answer'> &#10004;</span>";
   }
   else {
   	feedback = number1 + plusOrMinus + number2 + " = " + "<span class='uncorrect_answer'>" + yourAnswer + "</span>" + "<span class='corrected_answer'> = " + rightAnswer + "</span>";
