@@ -1,59 +1,80 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Тренажер устного счёта</title>
-  <link href="styles/main.css" rel="stylesheet" type="text/css">
-  <link href="styles/reset.css" rel="stylesheet" type="text/css">
-  <link href="styles/buttons.css" rel="stylesheet" type="text/css">
-  <link href="styles/footer.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
-  <script async src="js/main.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <title>Тренажер устного счёта</title>
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
+    <link href="styles/reset.css" rel="stylesheet" type="text/css">
+    <link href="styles/buttons.css" rel="stylesheet" type="text/css">
+    <link href="styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+    <script async src="js/main.js" type="text/javascript"></script>
+    <script data-ad-client="ca-pub-4324475413178470" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
-  <h1 class="head">Тренажер устного счета</h1>
-  <h2 class="head">Прокачай свой мозг!</h2>
-  <main class="settings-wrapper">
-    <label class="question">Сколько примеров заряжать?</label>
-    <input class="input" type="number" id="amount" value="10" min="10" max="100"/><br>
+    <h1 class="head">Тренажер устного счета</h1>
+    <h2 class="head">Прокачай свой мозг!</h2>
+    <main class="settings-wrapper">
+        <label class="question">Сколько примеров заряжать?</label>
+        <input class="input" type="number" id="amount" value="10" min="10" max="100" /><br>
 
-    <p class="question">Какое арифметическое действие будем производить?</p>
-    <label class="operator">+</label><input id="plus" type="radio" name="answer" checked="true">
-    <label class="operator">&minus;</label><input id="minus" type="radio" name="answer"><br>
+        <p class="question">Выберите действие</p>
+        <label class="operator">+</label><input id="plus" type="radio" name="answer" checked="true">
+        <label class="operator">&minus;</label><input id="minus" type="radio" name="answer"><br>
 
-    <p class="question">С числами какого разряда будем работать?</p>
-    <select  class="input">
-      <option id="numbers1" selected>X + X</option>
-      <option id="numbers2">XX + X</option>
-      <option id="numbers3">XX + XX</option>
-      <option id="numbers4">XXX + XX</option>
-      <option id="numbers5">XXX + XXX</option>
-    </select>
-    
-<!--
-    <label class="question">[не реализовано] Ограничение по времени:</label>
-    <p class="question"><input class="input" type="number" id="restriction" value="10" min="2" max="30"/><span class="seconds_for_task">   сек. на пример</span></p>
--->
-    
-    <input class="button" type="button" id="btn" value="ПОЕХАЛИ!">
-  </main>
-  
-  <section class="result-wrapper">
-    <h2 class="head">Результат тренинга</h2>
-    <p class="result" id="text">здесь появится результат</p>
-    <p class="mark" id="mark">здесь будет оценка</p>
-  </section>
-  
-  <footer class="footer">
-    <div class="copyright">
-      <p class="copyright-text">andryplekhanov &copy; 2017 All rights reserved</p>
-      <p class="copyright-text">Made with 
-        <span class="sign"> &hearts;  </span>
-        <a href="https://vk.com/andryplekhanov" target="_blank"> by Andrey Plekhanov</a>
-      </p>
-    </div>
-  </footer>
+        <p class="question">Выберите сложность</p>
+        <select class="input" id="numberDigit">
+            <option id="numbers1" selected value="9.9">X + X</option>
+            <option id="numbers2" value="99.9">XX + X</option>
+            <option id="numbers3" value="99.99">XX + XX</option>
+            <option id="numbers4" value="999.99">XXX + XX</option>
+            <option id="numbers5" value="999.999">XXX + XXX</option>
+        </select>
+
+        <div class="time-limit-wrapper">
+            <label class="question">
+                <input type="checkbox" id="hasTimeLimit"> Ограничение по времени<span class="colon">:</span>
+            </label>
+            <p class="question">
+                <!--<input class="input" type="number" id="restriction" value="10" min="2" max="10" />-->
+                <select class="input" id="restriction">
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span class="seconds_for_task">   сек. на один пример</span>
+            </p>
+        </div>
+
+
+        <input class="button" type="button" id="btn" value="ПОЕХАЛИ!">
+    </main>
+
+    <section class="result-wrapper">
+        <h2 class="head">Результат тренинга</h2>
+        <!--<p class="result" id="text">здесь появится результат</p>-->
+        <div class="result" id="text">
+        </div>
+        <p class="mark" id="mark">здесь будет оценка</p>
+    </section>
+
+    <footer class="footer">
+        <div class="copyright">
+            <p class="copyright-text">andryplekhanov &copy; 2017 All rights reserved</p>
+            <p class="copyright-text">
+                Made with
+                <span class="sign"> &hearts;  </span>
+                <a href="https://vk.com/andryplekhanov" target="_blank"> by Andrey Plekhanov</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
